@@ -1,73 +1,181 @@
-# React + TypeScript + Vite
+# KnockKnock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A Learning Management Web Application for Efficient Study
 
-Currently, two official plugins are available:
+KnockKnock is a web application designed to help users organize study materials, generate quizzes, review important concepts, and track learning progress.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> ⚠️ This repository is a personal portfolio fork of the original team project developed in the AI Service Laboratory.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 📖 Overview
 
-## Expanding the ESLint configuration
+KnockKnock is a learning management web application that enables users to manage study materials and review them efficiently.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The application provides an integrated learning experience by offering note management, quiz generation, memorization, and learning record features within a single platform.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# ✨ Key Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔐 User Authentication
+
+- User Login
+- User Registration
+- Password Reset
+
+### 📝 Note Management
+
+- Create and edit study notes
+- Organize learning materials
+- Highlight important content
+- Manage personal notes
+
+### ❓ Quiz
+
+- Generate quizzes from study notes
+- Solve quizzes interactively
+- Support self-assessment and efficient review
+
+### 📚 Memorization
+
+- Review important concepts
+- Reinforce learning through repetitive practice
+
+### 📊 Learning Records
+
+- Track study history
+- View learning statistics
+- Review detailed learning sessions
+
+### 📄 PDF Export
+
+- Export study materials as PDF files
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- React 19
+- TypeScript
+- Vite
+
+### Styling
+
+- Styled Components
+- CSS3
+
+### Routing
+
+- React Router DOM
+
+### Networking
+
+- Axios
+
+### Data Visualization
+
+- Recharts
+
+### Utilities
+
+- html2canvas
+- jsPDF
+
+---
+
+# 📂 Project Structure
+
+```text
+src
+├── components
+├── hooks
+├── pages
+│   ├── LoginPage
+│   ├── SignupPage
+│   ├── PasswordResetPage
+│   ├── MainPage
+│   ├── NotePage
+│   ├── QuizPage
+│   ├── MemorizePage
+│   ├── RecordPage
+│   └── RecordSessionDetailPage
+├── services
+├── storage
+├── types
+├── utils
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Clone the Repository
+
+```bash
+git clone https://github.com/yejin0303/YIU-AISL-KnockKnock.git
 ```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Run the Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+# 👩‍💻 My Contributions
+
+As a Frontend Developer, I was responsible for implementing and improving several core features of the application.
+
+### Authentication
+
+- Implemented the Login page and authentication workflow
+- Developed the User Registration (Sign Up) feature
+- Implemented the Password Reset functionality
+
+### Note Management
+
+- Implemented the Note Management feature
+- Improved the note creation and editing workflow
+- Enhanced the usability of study material management
+
+### Quiz Feature
+
+- Developed the Quiz Page from scratch using React and TypeScript
+- Implemented quiz-solving workflows and user interactions
+- Improved the user experience for quiz-based learning
+
+### Learning Features
+
+- Developed the Learning Record page for tracking users' study history
+- Improved user interactions across learning-related pages
+
+### Frontend Development
+
+- Developed frontend pages using React and TypeScript
+- Improved the user interface (UI) and user experience (UX)
+- Fixed frontend bugs and enhanced application usability
+- Collaborated with team members using GitHub Pull Requests and branch-based development
+
+---
+
+# 🤝 Team Project
+
+This project was developed as a team project in the AI Service Laboratory.
+
+---
+
+# 📄 License
+
+This repository is maintained for educational and portfolio purposes only.
