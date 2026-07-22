@@ -1,0 +1,161 @@
+.export-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 모달 카드 */
+.export-modal-card {
+  position: relative;
+  width: 675px;
+  min-height: 276px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 28px 48px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.export-modal-header {
+  display: flex;
+  justify-content: center;
+}
+
+.export-modal-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 30px;
+  color: #000000;
+}
+
+.export-modal-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 마지막 row(포멧) 아래 여유 공간 */
+.export-modal-row:last-of-type {
+  margin-bottom: 24px;
+}
+
+.export-modal-label {
+  font-weight: 400;
+  font-size: 25px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.export-modal-folder-name {
+  font-size: 25px;
+  color: #000000;
+}
+
+.export-modal-divider {
+  width: 100%;
+  border-bottom: 1px solid #cecdcd;
+}
+
+/* 파일 이름 input */
+.export-modal-input {
+  font-size: 25px;
+  padding: 4px 8px;
+  font-family: inherit;
+  border: none;
+  border-bottom: 1px solid #cecdcd;
+  outline: none;
+  width: 60%;
+}
+
+/* 폴더 버튼 */
+.export-modal-folder-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.export-modal-folder-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.export-modal-folder-icon,
+.export-modal-more-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* 🔽 포멧 select + 화살표 래퍼 */
+.export-select-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* 포멧 select (기본 화살표 없애고 우리가 컨트롤) */
+.export-modal-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #000000;
+
+  padding: 4px 36px 4px 10px; /* 오른쪽은 아이콘 들어갈 자리 */
+  border-radius: 6px;
+  border: 1px solid #cecdcd;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* IE용 기본 화살표 제거 */
+.export-modal-select::-ms-expand {
+  display: none;
+}
+
+/* 커스텀 화살표 아이콘 위치 */
+.export-select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* 🔥 이 값 줄이면 왼쪽으로, 늘리면 오른쪽으로 */
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* 하단 액션 영역 */
+.export-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+/* 다운로드 버튼 (디자인 최소) */
+.export-modal-download-btn {
+  padding: 6px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #cecdcd;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.export-modal-download-btn:hover {
+  background: #f4f4f4;
+}

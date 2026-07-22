@@ -1,0 +1,311 @@
+/*  반응형 레이아웃 적용 */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f7f9;
+  height: 100vh;
+}
+
+/* * {
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+} */
+
+/* 전체 배경 */
+.auth-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 가운데 정렬된 래퍼 */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5vh;
+}
+
+/* 왼쪽 로고 영역 */
+.auth-logo-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4vh;
+}
+
+/* 로고 이미지 - 크기 줄임 */
+.auth-logo-img {
+  width: clamp(320px, 20vw, 400px);
+  height: auto;
+  display: block;
+}
+
+/* 오른쪽 로그인 폼 */
+.auth-form-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6vh;
+}
+
+/* 입력창 + 버튼 영역 */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8vh;
+  align-items: center;
+}
+
+/* 입력 박스 - 크기 줄임 */
+.auth-input {
+  width: clamp(320px, 20vw, 400px);
+  height: clamp(52px, 5.2vh, 65px);
+  padding: 0 clamp(14px, 1vw, 18px);
+  border-radius: clamp(6px, 0.35vw, 8px);
+  border: 1px solid #e1e1e1;
+  background-color: #ffffff;
+  font-size: clamp(14px, 1vw, 18px);
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.auth-input::placeholder {
+  color: #b8b8b8;
+  font-size: clamp(14px, 1vw, 18px);
+}
+
+/* 로그인 버튼 - 크기 줄임 */
+.auth-button {
+  width: clamp(120px, 7vw, 150px);
+  height: clamp(44px, 4.5vh, 52px);
+  border-radius: clamp(6px, 0.35vw, 8px);
+  border: none;
+  background-color: #212020;
+  color: #ffffff;
+  font-size: clamp(15px, 1vw, 18px);
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  opacity: 0.9;
+}
+
+/* 하단 링크 묶음 */
+.auth-link-box {
+  margin-top: 3.6vh;
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 0.7vw, 14px);
+}
+
+.auth-divider {
+  font-size: clamp(12px, 0.75vw, 14px);
+  color: #777777;
+  position: relative;
+  top: 0px;
+}
+
+.auth-link-button {
+  border: none;
+  background: none;
+  font-size: clamp(14px, 1vw, 18px);
+  color: #777777;
+  cursor: pointer;
+}
+
+/* 비밀번호 재설정 페이지 */
+
+.reset-form-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.3vh;
+}
+
+.reset-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.reset-row {
+  display: flex;
+  flex-direction: column;
+  gap: -0.2vh;
+}
+
+.reset-label {
+  font-size: clamp(14px, 1vw, 18px);
+  font-weight: 500;
+  color: #454545;
+  margin-bottom: 0.6vh;
+}
+
+/* 이메일 / 인증번호 줄 */
+.reset-row-input {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 0.8vw, 14px);
+}
+
+/* 입력창 - 크기 줄임 */
+.reset-input {
+  width: clamp(320px, 20vw, 400px);
+  height: clamp(52px, 5.2vh, 65px);
+  padding: 0 clamp(14px, 1vw, 18px);
+  border-radius: clamp(6px, 0.35vw, 8px);
+  border: 1px solid #CECDCD;
+  background-color: #ffffff;
+  font-size: clamp(14px, 1vw, 18px);
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.reset-input::placeholder {
+  color: #b8b8b8;
+  font-size: clamp(14px, 1vw, 18px);
+}
+
+/* 인증 버튼 - 크기 줄임 */
+.reset-inline-button {
+  height: clamp(52px, 5.2vh, 65px);
+  width: clamp(110px, 7vw, 140px);
+  font-size: clamp(13px, 1.3vw, 16px);
+  font-weight: 500;
+  border-radius: clamp(6px, 0.35vw, 8px);
+  border: 1px solid #CECDCD;
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #8A8A8A;
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* 상태 버튼 컬러 */
+.reset-inline-button--outline {
+  border-color: #CECDCD;
+  color: #22c55e;
+}
+
+.reset-inline-button--success {
+  border-color: #CECDCD;
+  color: #22c55e;
+}
+
+.reset-inline-button--error {
+  border-color: #ef4444;
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+/* 완료 버튼 - 크기 줄임 */
+.reset-submit-button {
+  width: clamp(120px, 7vw, 150px);
+  height: clamp(48px, 5vh, 58px);
+  border-radius: clamp(6px, 0.35vw, 8px);
+  font-size: clamp(15px, 1.1vw, 20px);
+  background-color: #212020;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: 1vh;
+  left: clamp(100px, 6.5vw, 130px);
+}
+
+.reset-submit-button:hover {
+  opacity: 0.9;
+}
+
+/* 비밀번호 확인 입력창 + 체크 아이콘 */
+.reset-input-with-icon {
+  position: relative;
+  width: clamp(320px, 20vw, 400px);
+}
+
+.reset-input-with-icon .reset-input {
+  padding-right: clamp(36px, 2.2vw, 44px);
+}
+
+.reset-check-icon {
+  position: absolute;
+  right: clamp(12px, 0.8vw, 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(18px, 1.2vw, 22px);
+  color: #22c55e;
+}
+
+.reset-input--error {
+  border-color: #ef4444;
+}
+
+/* 공통 에러 스타일 */
+.input-error {
+  border: 2px solid #ff4d4d !important;
+}
+
+/* 에러 문구 - 크기 줄임 */
+.error-message,
+.reset-error-message {
+  min-height: 1.85vh;
+  font-size: clamp(11px, 0.75vw, 14px);
+  font-weight: 500;
+  color: #ff3333;
+  margin-top: 0.2vh;
+  line-height: 1.85vh;
+}
+
+/* 입력창 wrapper */
+.input-wrapper,
+.reset-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -0.93vh;
+}
+
+.password-strength {
+  font-size: clamp(10px, 0.65vw, 13px);
+  margin-top: 0.2vh;
+}
+
+.password-strength--weak {
+  color: #ef4444;
+}
+
+.password-strength--medium {
+  color: #f59e0b;
+}
+
+.password-strength--strong {
+  color: #22c55e;
+}
+
+/* 추가: 작은 화면 대응 */
+@media (max-width: 768px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
+  
+  .auth-logo-area {
+    margin-bottom: 3vh;
+  }
+  
+  .auth-form-area {
+    margin-top: 0;
+  }
+  
+  .auth-input,
+  .reset-input {
+    width: 80vw;
+    max-width: 400px;
+  }
+  
+  .reset-input-with-icon {
+    width: 80vw;
+    max-width: 400px;
+  }
+}

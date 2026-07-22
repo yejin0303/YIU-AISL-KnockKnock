@@ -1,0 +1,44 @@
+/* 공통 아이콘 버튼 스타일 */
+
+.toolbar-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  border-radius: 4px;
+
+  background: transparent;
+  cursor: pointer;
+}
+
+/* 아이콘 이미지 크기 (피그마 24 x 24 기준) */
+.toolbar-icon-button img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+/* 호버 시 살짝 배경 */
+.toolbar-icon-button:hover {
+  background: #f4f4f4;
+}
+
+/* 선택된 서식(예: Bold ON) 상태 */
+.toolbar-icon-button--active {
+  background: #e5b7b7; /* 피그마 bold-01 배경색 */
+}
+
+/* 비활성(예: 현재 사용할 수 없는 버튼) */
+.toolbar-icon-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  background: transparent;
+}

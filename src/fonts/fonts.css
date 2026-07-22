@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'KoPub Dotum';
+	font-weight: 300;
+	font-style: normal;
+	src: url('./KOPUBWORLD DOTUM LIGHT.TTF') format('truetype');
+}
+
+@font-face {
+	font-family: 'KoPub Dotum';
+	font-weight: 500;
+	font-style: normal;
+	src: url('./KOPUBWORLD DOTUM MEDIUM.TTF') format('truetype');
+}
+
+@font-face {
+	font-family: 'KoPub Dotum';
+	font-weight: 700;
+	font-style: normal;
+	src: url('./KOPUBWORLD DOTUM BOLD.TTF') format('truetype');
+}

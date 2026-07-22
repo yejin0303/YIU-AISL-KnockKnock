@@ -1,0 +1,66 @@
+/* ===== 코드 블록(5번 아이콘) ===== */
+.editor-code-block {
+  margin: 8px 0;
+  padding: 10px 12px;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  box-sizing: border-box;
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.editor-code-block-inner {
+  white-space: inherit;
+}
+
+/* ===== 콜아웃 블록 ===== */
+.editor-callout {
+  margin: 8px 0;
+  padding: 10px 12px;
+  background-color: #fff9e5;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.editor-callout-icon {
+  flex: 0 0 auto;
+  font-size: 16px;
+}
+
+.editor-callout-content {
+  flex: 1 1 auto;
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* ===== 이미지 블록 ===== */
+.editor-image-block {
+  margin: 12px 0;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.editor-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ===== 리스트 ===== */
+.editor-list {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+.editor-list li {
+  margin: 2px 0;
+}

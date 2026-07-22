@@ -1,0 +1,9 @@
+/* src/components/Note/NoteToolbar/QuizMode.css */
+
+.note-editor--quiz-mode .note-editor-body {
+  cursor: url('/assets/icons/quiz-cursor-icon.png') 0 0, auto;
+}
+
+body.quiz-mode-active {
+  cursor: url('/assets/icons/quiz-cursor-icon.png') 0 0, auto !important;
+}

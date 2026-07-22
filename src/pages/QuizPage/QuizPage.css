@@ -1,0 +1,307 @@
+/* =========================
+   Quiz 페이지 전용 변수
+   ========================= */
+:root {
+  --quiz-btn-height: clamp(36px, 3.2vw, 42px);
+  --quiz-btn-width: clamp(75px, 6.5vw, 88px);
+  --quiz-btn-font: clamp(14px, 1.3vw, 17px);
+}
+
+/* =========================
+   Quiz 버튼 스타일
+   ========================= */
+.quiz-header-button--primary {
+  width: var(--quiz-btn-width);
+  height: var(--quiz-btn-height);
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-size: var(--quiz-btn-font);
+  border: none;
+}
+
+.quiz-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.quiz-next-button {
+  width: var(--quiz-btn-width);
+  height: var(--quiz-btn-height);
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #bfbfbf;
+  cursor: pointer;
+  font-size: var(--quiz-btn-font);
+  margin-left: 4px;
+  transition: 0.2s;
+}
+
+.quiz-next-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* =========================
+   자주 틀리는 단어 카드 (압축)
+   ========================= */
+.wrong-words-card {
+  margin-top: 16px;
+  padding: 12px 16px;
+  width: 100%;
+  min-height: 110px;
+  background: #fbfbfb;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-x: hidden;
+}
+
+.wrong-words-title {
+  margin: 0 0 6px 0;
+  font-size: clamp(11px, 0.9vw, 13px);
+  font-weight: 600;
+}
+
+.wrong-words-empty {
+  margin: 2px 0 0 0;
+  font-size: 11px;
+  color: #999;
+}
+
+.wrong-words-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wrong-words-item {
+  display: flex;
+  align-items: center;
+  font-size: clamp(11px, 0.9vw, 13px);
+  white-space: normal;
+  word-break: break-word;
+}
+
+.wrong-score {
+  font-size: clamp(11px, 0.9vw, 13px);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.wrong-score-red {
+  color: #e84141;
+}
+.wrong-score-yellow {
+  color: #d4a100;
+}
+.wrong-score-gray {
+  color: #666;
+}
+
+/* =========================
+   에디터 (Quiz 본문)
+   ========================= */
+.note-editor {
+  flex: 1;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.note-editor-body {
+  flex: 1;
+  padding: 8px 12px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.quiz-lines-scroll {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   Review fallback (when keyword mapping is unavailable)
+   ========================= */
+.quiz-review-fallback {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 6px 4px;
+}
+
+.quiz-review-fallback-hint {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.quiz-review-fallback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-review-fallback-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #ffffff;
+}
+
+.quiz-review-fallback-item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.quiz-review-fallback-item-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.quiz-review-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.quiz-review-badge--ok {
+  background: #ecfdf3;
+  color: #1f9254;
+  border-color: #bbf7d0;
+}
+
+.quiz-review-badge--no {
+  background: #fff5f5;
+  color: #d9534f;
+  border-color: #fecaca;
+}
+
+.quiz-review-badge--na {
+  background: #f3f4f6;
+  color: #6b7280;
+  border-color: #e5e7eb;
+}
+
+.quiz-review-fallback-question {
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+}
+
+.quiz-review-fallback-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #374151;
+  white-space: pre-wrap;
+}
+
+/* =========================
+   Quiz 줄 스타일
+   ========================= */
+.quiz-lines {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quiz-line {
+  width: 100%;
+  min-height: clamp(30px, 2.6vw, 38px);
+  padding: 0;
+  margin: 0;
+  font-size: clamp(11px, 0.9vw, 13px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  white-space: normal;
+  word-break: break-word;
+  column-gap: 0;
+  row-gap: 0;
+}
+
+/* 빈칸 입력박스 */
+.blank-input {
+  min-width: clamp(55px, 4vw, 75px);
+  height: clamp(20px, 1.6vw, 24px);
+  padding: 0 0.5ch;
+  margin: 0 !important;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-size: clamp(10px, 0.85vw, 13px);
+  line-height: 1;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+}
+
+/* 채점 스타일 */
+.blank-input--correct {
+  border-color: #2ecc71;
+  background-color: #f3fff7;
+}
+
+.blank-input--wrong {
+  border-color: #e74c3c;
+  background-color: #fff5f5;
+}
+
+/* 정답 텍스트 오른쪽 정렬 */
+.correct-answer-text {
+  margin-left: auto;
+  padding-left: 4px;
+  font-size: clamp(10px, 0.85vw, 13px);
+  color: #d9534f;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 첫 줄도 실선 구분이 보이도록(정답 이미지 스타일) */
+.quiz-lines > .quiz-line:first-child {
+  border-top: 1px solid #d9d9d9;
+}
+
+/* =========================
+   반응형
+   ========================= */
+@media (max-width: 768px) {
+  .note-editor-body {
+    padding: 8px;
+  }
+  .quiz-line {
+    font-size: 11px;
+  }
+  .blank-input {
+    font-size: 11px;
+  }
+}

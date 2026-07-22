@@ -1,0 +1,88 @@
+.location-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.location-modal-card {
+  position: relative;
+  width: 588px;
+  height: 227px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 24px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.location-modal-header {
+  display: flex;
+  justify-content: center;
+}
+
+.location-modal-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 30px;
+  color: #000;
+}
+
+.location-modal-divider {
+  width: 100%;
+  border-bottom: 1px solid #cecdcd;
+  margin: 8px 0;
+}
+
+.location-modal-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 4px 0;
+}
+
+.location-modal-label,
+.location-modal-value,
+.location-modal-folder-name {
+  font-size: 25px;
+  color: #000;
+}
+
+.location-modal-folder-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.location-modal-folder-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.location-modal-folder-icon,
+.location-modal-more-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.location-modal-input {
+  font-size: 25px;
+  padding: 4px 8px;
+  font-family: inherit;
+  border: none;
+  border-bottom: 1px solid #cecdcd;
+  outline: none;
+  width: 60%;
+}

@@ -1,0 +1,359 @@
+/* src/components/Note/NoteToolbar/NoteToolbar.css */
+
+/* ========================= */
+/*      툴바 전체 레이아웃      */
+/* ========================= */
+
+.note-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(5px, 0.5vw, 7px) clamp(10px, 1vw, 14px);
+  border-bottom: 1px solid #e4e4e4;
+  background: #faf9f9;
+  position: relative;
+  z-index: 1;
+}
+
+.note-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 0.7vw, 10px);
+}
+
+.note-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(5px, 0.6vw, 7px);
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(5px, 0.6vw, 8px);
+  position: relative;
+}
+
+.toolbar-group + .toolbar-group {
+  margin-left: clamp(5px, 0.6vw, 7px);
+}
+
+/* ========================= */
+/*      폰트 크기 버튼         */
+/* ========================= */
+
+.toolbar-fontsize-button {
+  width: clamp(48px, 4.6vw, 56px);
+  height: clamp(28px, 2.5vw, 32px);
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  background-image: url('/assets/icons/text-input.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+.toolbar-fontsize-button:focus {
+  outline: none;
+}
+
+.toolbar-fontsize-text {
+  display: inline-block;
+  min-width: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 400;
+  line-height: 1;
+  margin-left: clamp(5px, 0.4vw, 7px);
+  margin-bottom: clamp(1px, 0.1vw, 2px);
+  color: #000000;
+  position: relative;
+  z-index: 1;
+
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: text;
+}
+
+.toolbar-fontsize-text:focus {
+  outline: none;
+}
+
+.toolbar-fontsize-unit {
+  margin-left: 2px;
+  pointer-events: none;
+  font-size: clamp(11px, 1vw, 13px);
+}
+
+/* ========================= */
+/*     아이콘 버튼 공통        */
+/* ========================= */
+
+.toolbar-icon-button {
+  width: clamp(24px, 2vw, 28px);
+  height: clamp(24px, 2vw, 28px);
+  border-radius: clamp(4px, 0.4vw, 5px);
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.toolbar-icon-button img {
+  width: clamp(14px, 1.2vw, 16px);
+  height: clamp(14px, 1.2vw, 16px);
+  display: block;
+  object-fit: contain;
+}
+
+.toolbar-icon-button:hover {
+  background: #f4f4f4;
+}
+
+.toolbar-icon-button--active {
+  background: #e5b7b7;
+}
+
+.toolbar-icon-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  background: transparent;
+}
+
+/* ========================= */
+/*     아이콘 버튼 개별        */
+/* ========================= */
+
+.toolbar-icon-bold img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-icon-italic img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-icon-underline img {
+  width: 12px;
+  height: 12px;
+}
+
+.toolbar-icon-strike img {
+  width: 15px;
+  height: 15px;
+}
+
+.toolbar-icon-code img {
+  width: 20px;
+  height: 20px;
+}
+
+.toolbar-icon-callout img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-icon-image-add img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-icon-link img {
+  width: 17px;
+  height: 17px;
+}
+
+.toolbar-icon-align-left img {
+  width: 15px;
+  height: 15px;
+}
+
+.toolbar-icon-align-center img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-icon-align-right img {
+  width: 15px;
+  height: 15px;
+}
+
+.toolbar-icon-align-justify img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-icon-unordered-list img {
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-icon-ordered-list img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================= */
+/*      줄간격 버튼           */
+/* ========================= */
+
+.toolbar-lineheight-button {
+  width: clamp(24px, 2vw, 28px);
+  height: clamp(24px, 2vw, 28px);
+  border-radius: clamp(4px, 0.4vw, 5px);
+  border: 1px solid #d8d8d8;
+  background: #ffffff;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.toolbar-lineheight-button img {
+  width: clamp(14px, 1.2vw, 16px);
+  height: clamp(14px, 1.2vw, 16px);
+}
+
+/* ========================= */
+/*      드롭다운 메뉴         */
+/* ========================= */
+
+.toolbar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  z-index: 20;
+
+  min-width: clamp(56px, 5vw, 70px);
+  padding: 4px 0;
+
+  border-radius: clamp(5px, 0.5vw, 7px);
+  border: 1px solid #e2e2e2;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.toolbar-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toolbar-dropdown--fontsize {
+  max-height: 140px;
+  overflow-y: auto;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.toolbar-dropdown--fontsize::-webkit-scrollbar {
+  display: none;
+}
+
+.toolbar-dropdown-item {
+  width: 100%;
+  padding: clamp(4px, 0.4vw, 5px) clamp(8px, 0.8vw, 10px);
+  border: none;
+  background: transparent;
+  font-size: clamp(11px, 0.9vw, 12px);
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.toolbar-dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.toolbar-dropdown-item--active {
+  font-weight: 600;
+  background: #f0ebff;
+}
+
+.toolbar-dropdown-input-wrapper {
+  padding: 4px 8px;
+}
+
+.toolbar-lineheight-input {
+  width: 100%;
+  height: 24px;
+
+  font-size: 13px;
+  text-align: center;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  background: transparent;
+
+  outline: none;
+  color: inherit;
+}
+
+.toolbar-lineheight-input::placeholder {
+  color: #aaa;
+}
+
+/* ========================= */
+/*      내부 하이라이트 박스   */
+/* ========================= */
+
+.toolbar-icon-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 18px;
+  border-radius: 2px;
+  background: transparent;
+}
+
+/* 활성화일 때만 배경 표시 */
+.toolbar-icon-button.toolbar-icon-button--active .toolbar-icon-inner {
+  background: #e5b7b7;
+}
+
+/* ========================= */
+/*      Quiz 버튼            */
+/* ========================= */
+
+.note-toolbar-quiz-button {
+  min-width: clamp(50px, 4.6vw, 60px);
+  height: clamp(24px, 2vw, 28px);
+  padding: 0 clamp(8px, 0.8vw, 12px);
+  border-radius: clamp(4px, 0.4vw, 5px);
+  border: 1px solid #d8d8d8;
+  background: #f4f4f4;
+  font-size: clamp(11px, 0.9vw, 12px);
+  cursor: pointer;
+}
+
+.note-toolbar-quiz-button--active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* ========================= */
+/*      숨겨진 이미지 input    */
+/* ========================= */
+
+.note-toolbar-image-input {
+  display: none;
+}

@@ -1,0 +1,76 @@
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-card {
+  width: 660px;
+  min-height: 276px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 40px 48px 32px;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm-title {
+  margin: 0 0 16px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  color: #000000;
+}
+
+.confirm-description {
+  margin: 0 0 32px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: #000000;
+}
+
+/* 버튼 영역 */
+.confirm-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  margin-right: 40px;
+}
+
+.confirm-button {
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.confirm-button.cancel {
+  color: #f21515;
+}
+
+.confirm-button.ok {
+  color: #00a53a;
+}
+
+/* cancel | OK 사이 세로줄 */
+.confirm-divider-vertical {
+  width: 1px;
+  height: 30px;
+  background: #cfcfcf;
+}

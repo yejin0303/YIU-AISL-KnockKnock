@@ -1,0 +1,335 @@
+html,
+body {
+	height: 100%; /* 문서 높이를 화면 높이로 고정 */
+	margin: 0;
+	padding: 0;
+	overflow: hidden; /* 스크롤바 숨기기 */
+}
+
+/* 전체 배경 */
+body {
+	background-color: #f5f5f5;
+	margin: 0;
+	padding: 0;
+	font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+}
+
+/* 스케일 래퍼 - 해상도에 맞춰 반응형 스케일 조정 및 중앙 정렬 */
+/* 뷰포트 너비 기준으로 50% 크기로 표시 (1920px 기준) */
+.main-zoom-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+	transform: scale(0.5);
+	transform-origin: center;
+}
+
+/* 반응형 미디어 쿼리로 다양한 해상도 대응 */
+/* 작은 화면에서는 더 크게, 큰 화면에서는 더 작게 조정 */
+@media (max-width: 1366px) {
+	.main-zoom-wrapper {
+		transform: scale(0.6);
+	}
+}
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+	.main-zoom-wrapper {
+		transform: scale(0.5);
+	}
+}
+
+@media (min-width: 1921px) and (max-width: 2560px) {
+	.main-zoom-wrapper {
+		transform: scale(0.4);
+	}
+}
+
+@media (min-width: 2561px) {
+	.main-zoom-wrapper {
+		transform: scale(0.35);
+	}
+}
+
+/* 메인 컨테이너 - 가운데 정렬 */
+.main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 72px;
+
+	width: 100%;
+	max-width: 2000px;
+	margin: 0 auto;
+
+	padding: 64px 48px;
+	box-sizing: border-box;
+}
+
+/* 왼쪽 패널 (로고 + 유저영역) */
+.left-panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+
+	width: 720px;
+}
+
+/* 로고 */
+.logo-img {
+	width: 720px;
+	height: 720px;
+	object-fit: contain;
+	margin-top: -96px;
+}
+
+/* 유저 드롭다운 버튼 */
+.user-dropdown {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
+
+	font-size: 16px;
+	font-weight: 400;
+	color: #e6cdc8;
+}
+
+/* "000님 !" */
+.user-name-text {
+	font-size: 28px;
+	font-weight: 400;
+	color: #878484;
+	margin-right: 6px;
+	margin-top: -200px;
+	margin-left: 56px;
+}
+
+/* "안녕하세요" */
+.user-hello-text {
+	font-size: 28px;
+	font-weight: 400;
+	color: #e6cdc8;
+	margin-top: -200px;
+}
+
+/* 화살표 아이콘 */
+.dropdown-icon {
+	width: 40px;
+	height: 40px;
+	margin-top: -200px;
+}
+
+/* 드롭다운 메뉴 */
+.menu-list {
+	list-style: none;
+	padding: 14px 17px;
+	margin-top: -88px;
+	margin-left: 44px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	background-color: #ffffff;
+	border-radius: 8px;
+	border: 2px solid #cecdcd;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.menu-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	font-size: 26px;
+	color: #b0afb0;
+	cursor: pointer;
+}
+
+.menu-item:hover {
+	color: #000;
+}
+
+.menu-icon {
+	width: 28px;
+	height: 28px;
+	color: #b0afb0;
+	margin-right: 16px;
+}
+
+/* 오른쪽 패널 (4개 카드) */
+.right-panel {
+	display: grid;
+	grid-template-columns: 896px 840px;
+	grid-template-rows: 688px 664px;
+	gap: 48px;
+}
+
+/* 카드 */
+.card {
+	width: 840px;
+	height: 640px;
+
+	border-radius: 24px;
+	padding: 48px;
+	background: #ffffff;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.03), 0 20px 50px rgba(0, 0, 0, 0.18);
+
+	transition: background-color 0.25s ease, color 0.25s ease,
+		box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+/* 카드 상단 헤더 */
+.card-header {
+	display: flex;
+	align-items: center;
+	gap: 19px;
+	margin-bottom: 19px;
+	padding-bottom: 10px;
+}
+
+/* 아이콘 박스 */
+.card-icon-box {
+	position: relative;
+	width: 128px;
+	height: 120px;
+	flex-shrink: 0;
+}
+
+.card-icon-bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 32px;
+}
+
+/* 실제 아이콘 */
+.card-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
+}
+
+/* 텍스트 - 제목 */
+.card-title {
+	font-size: 52px;
+	font-weight: 350;
+	margin: 8px;
+	margin-top: 24px;
+	color: #454545;
+	border-bottom: 2px solid #878484;
+	padding-bottom: 18px;
+}
+
+/* 섹션 제목 (최근 노트 / 타자 암기 모드 / ...) */
+.card-subtitle {
+	font-size: 38px;
+	font-weight: 400;
+	color: #454545;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	margin-left: 24px;
+}
+
+/* 본문 텍스트 */
+.card-desc {
+	font-size: 30px;
+	color: #454545;
+	line-height: 1.5;
+	margin: 12px 80px;
+}
+
+/* add more 버튼 */
+.more-button {
+	width: 220px;
+	height: 92px;
+	padding: 13px 16px;
+	padding-left: 36px;
+	border-radius: 11px;
+	font-size: 26px;
+	flex-shrink: 0;
+
+	background: #000;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+
+	margin-top: auto;
+	align-self: flex-end;
+}
+
+.more-button-icon {
+	width: 40px;
+	height: 40px;
+	transition: filter 0.2s ease;
+}
+
+/* Hover 효과 */
+.card:hover {
+	background-color: #111;
+	color: #fff;
+	transform: translateY(-8px);
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+	border-bottom-color: #fff;
+}
+
+.card:hover .more-button {
+	background: #fff;
+	color: #000;
+}
+
+.card:hover .more-button-icon {
+	filter: invert(1);
+}
+
+/* hover 시 카드 반전 + 화살표 색도 반전 */
+.card:hover {
+	background-color: #111111;
+	color: #ffffff;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+	transform: translateY(-4px);
+}
+
+.card:hover .card-title,
+.card:hover .card-subtitle,
+.card:hover .card-desc {
+	border-bottom-color: #ffffff;
+	color: #ffffff;
+}
+
+.card:hover .more-button {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.card:hover .arrow-dark {
+	display: none;
+}
+
+.card:hover .arrow-white {
+	display: inline-block;
+}

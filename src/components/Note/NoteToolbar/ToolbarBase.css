@@ -1,0 +1,57 @@
+/* 툴바 전체 레이아웃 */
+
+.note-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-bottom: 1px solid #eee;
+  background: #ffffff;
+}
+
+/* 왼쪽(폰트, 서식 아이콘 모음) */
+.note-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 오른쪽(Quiz 버튼 등) */
+.note-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ───── 폰트 사이즈 버튼 ───── */
+
+.toolbar-font-size-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+  background: #ffffff;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+.toolbar-font-size-button span {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* 툴바 그룹 간 구분선 (예: 정렬 앞뒤로 작은 간격) */
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-group + .toolbar-group {
+  margin-left: 8px;
+}

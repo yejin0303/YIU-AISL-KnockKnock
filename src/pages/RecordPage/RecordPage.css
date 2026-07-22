@@ -1,0 +1,598 @@
+/* 헤더 우측: 드롭다운 + Retry */
+.record-header-actions {
+	display: flex;
+	align-items: center;
+	gap: clamp(8px, 0.7vw, 16px);
+	margin-top: clamp(14px, 1.1vw, 24px);
+	margin-right: clamp(10px, 0.8vw, 20px);
+}
+
+/* 헤더 드롭다운 래퍼 */
+.record-header-dropdown-wrapper {
+	position: relative;
+}
+
+/* 헤더 드롭다운 버튼(텍스트 + 아이콘) */
+.record-header-select {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: clamp(3px, 0.25vw, 6px);
+	padding: clamp(6px, 0.5vw, 10px) clamp(10px, 0.9vw, 18px);
+	border-radius: 4px;
+	border: 1px solid #d4d7e5;
+	background: #ffffff;
+	cursor: pointer;
+	min-height: clamp(35px, 2.2vw, 44px);
+}
+
+.record-header-dropdown-text {
+	font-size: clamp(12px, 0.8vw, 16px);
+	font-weight: 600;
+	color: #111827;
+}
+
+.record-header-dropdown-arrow-btn {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.record-header-dropdown-arrow-btn img {
+	margin-top: 0px;
+	margin-left: 4px;
+}
+
+.dropdown-icon {
+	width: clamp(14px, 1.1vw, 22px);
+	height: clamp(14px, 1.1vw, 22px);
+}
+
+/* 드롭다운 카드 안의 제목 */
+.record-header-dropdown-card .record-header-dropdown-title {
+	font-size: clamp(13px, 0.85vw, 18px) !important;
+	font-weight: 500;
+	color: #111827;
+	margin-top: 1px;
+}
+
+.record-header-session-item {
+	font-size: clamp(12px, 0.75vw, 16px);
+	padding: clamp(2px, 0.2vw, 4px) clamp(2px, 0.15vw, 4px);
+}
+
+/* 헤더 드롭다운 카드 (단원/회차) */
+.record-header-dropdown-card {
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 0;
+	width: 20vw;
+	max-width: 280px;
+	min-width: 200px;
+	background: #ffffff;
+	border-radius: 10px;
+	border: 1px solid #e5e7f0;
+	box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+	padding: 12px 14px 14px;
+	z-index: 20;
+}
+
+/* 카드 상단: 왼쪽 화살표 + 제목 */
+.record-header-dropdown-card-top {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.record-header-left-icon {
+	display: flex;
+	align-items: center;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0;
+}
+
+.left-icon {
+	width: 14px;
+	height: 14px;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.record-header-dropdown-title {
+	font-size: 14px;
+	font-weight: 600;
+	color: #111827;
+}
+
+.record-header-session-list {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	font-size: 12px;
+}
+
+.record-header-session-item {
+	padding: 3px 2px;
+	cursor: pointer;
+	color: #6b7280;
+}
+
+.record-header-session-item--active {
+	color: #111827;
+	font-weight: 700;
+}
+
+/* Retry 버튼 */
+.record-header-retry {
+	padding: clamp(8px, 0.7vw, 14px) clamp(14px, 1.2vw, 24px);
+	border-radius: 4px;
+	border: 1px solid #111827;
+	background: #ffffff;
+	font-size: clamp(13px, 0.9vw, 18px);
+	font-weight: 600;
+	cursor: pointer;
+	min-height: clamp(32px, 2.2vw, 40px);
+	display: flex;
+	align-items: center;
+}
+
+/* Retry 버튼 hover */
+.record-header-retry:hover {
+	background-color: #111827;
+	color: #ffffff;
+	border-color: #111827;
+	transition: 0.2s;
+}
+
+/* =========================
+   본문 전체 레이아웃
+   ========================= */
+.record-page {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	padding-top: clamp(10px, 1vw, 20px);
+	padding-bottom: clamp(20px, 4vh, 60px);
+	overflow-y: auto;
+}
+
+/* 카드 래퍼 */
+.record-card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: clamp(36px, 3vw, 64px);
+	zoom: 0.5;
+}
+
+/* =========================
+   상단 3분할
+   ========================= */
+.record-top-grid {
+	display: grid;
+	grid-template-columns: 1.3fr 1.7fr 1.4fr;
+	gap: clamp(18px, 1.4vw, 30px);
+	margin-bottom: clamp(26px, 2.2vw, 44px);
+	position: relative;
+}
+
+.record-top-grid::before,
+.record-top-grid::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background-color: #8a8c8f7a;
+}
+
+/* 첫 번째 세로선: 도넛/그래프 사이 */
+.record-top-grid::before {
+	left: calc(28% - 30px);
+}
+
+/* 두 번째 세로선: 그래프/리스트 사이 */
+.record-top-grid::after {
+	left: calc(66.66% - 30px);
+}
+
+/* =========================
+   도넛 그래프
+   ========================= */
+.record-donut-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: clamp(32px, 0.75vw, 40px);
+}
+
+.record-donut-chart {
+	width: clamp(330px, 30vw, 690px);
+	height: clamp(330px, 30vw, 690px);
+	border-radius: 50%;
+	background: conic-gradient(#0d0c45 0 82%, #e4e6fb 82% 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.record-donut-inner {
+	width: 68%;
+	height: 68%;
+	border-radius: 50%;
+	background: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.record-donut-label {
+	font-size: clamp(26px, 2.4vw, 40px);
+	color: #111827;
+	margin-bottom: clamp(6px, 0.5vw, 12px);
+}
+
+.record-donut-value {
+	font-size: clamp(70px, 4.8vw, 100px);
+	font-weight: 900;
+	color: #111827;
+}
+
+/* =========================
+   공통 섹션 제목 (본문 텍스트)
+   ========================= */
+.record-section-title {
+	font-size: clamp(20px, 1.8vw, 32px);
+	font-weight: 600;
+	color: #111827;
+	margin-bottom: clamp(8px, 0.7vw, 16px);
+}
+
+/* =========================
+   라인 차트 섹션
+   ========================= */
+.record-chart-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.record-linechart-wrapper {
+	flex: 1;
+	min-height: clamp(290px, 27vw, 580px);
+	font-size: clamp(16px, 1.6vw, 28px);
+}
+
+.record-line-tooltip {
+	background: #ffffff;
+	border-radius: 6px;
+	border: 1px solid #e5e7eb;
+	padding: clamp(10px, 1vw, 20px) clamp(16px, 1.4vw, 28px);
+	box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+	font-size: clamp(14px, 1.4vw, 24px);
+}
+
+.record-line-tooltip-date {
+	font-weight: 600;
+	color: #111827;
+	margin-bottom: clamp(4px, 0.35vw, 7px);
+}
+
+.record-line-tooltip-rate {
+	font-weight: 600;
+	color: #4f46e5;
+}
+
+/* X축 날짜 3줄 텍스트 */
+.record-xaxis-date {
+	font-size: clamp(14px, 1.4vw, 24px);
+	font-weight: 500;
+	fill: #111827;
+}
+
+/* 색상 공통 */
+.rate-green {
+	color: #16a34a;
+	fill: #16a34a;
+	stroke: #16a34a;
+}
+
+.rate-yellow {
+	color: #eab308;
+	fill: #eab308;
+	stroke: #eab308;
+}
+
+.rate-red {
+	color: #ef4444;
+	fill: #ef4444;
+	stroke: #ef4444;
+}
+
+.record-line-label {
+	font-size: clamp(15px, 1.5vw, 26px);
+	font-weight: 500;
+}
+
+/* =========================
+   오른쪽: 정답률 정렬 리스트
+   ========================= */
+.record-toplist-section {
+	display: flex;
+	flex-direction: column;
+	padding-right: clamp(46px, 4vw, 96px);
+}
+
+.record-toplist-header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: clamp(5px, 0.45vw, 9px);
+	margin-bottom: clamp(6px, 0.55vw, 14px);
+	position: relative;
+}
+
+/* 헤더 안 제목 */
+.record-toplist-header .record-section-title {
+	position: relative;
+	display: inline-block;
+	padding-bottom: 6px;
+}
+
+.record-toplist-header .record-section-title::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: rgba(0, 0, 0, 0.15);
+	border-radius: 2px;
+}
+
+.record-sort-button {
+	border: none;
+	background: transparent;
+	font-size: clamp(10px, 0.9vw, 16px);
+	cursor: pointer;
+	padding: 0 clamp(3px, 0.3vw, 6px);
+}
+
+.record-sort-button img,
+.record-sort-button {
+	width: clamp(30px, 2vw, 30px);
+	height: clamp(50px, 2.8vw, 50px);
+	transform: translateY(clamp(3px, 0.25vw, 6px));
+	margin-top: clamp(-14px, -0.5vw, -10px);
+	margin-left: clamp(-4px, -0.5vw, -4px);
+}
+
+.record-sort-menu {
+	position: absolute;
+	top: calc(100% + clamp(3px, 0.2vw, 5px));
+	left: 0;
+	width: clamp(150px, 14vw, 280px);
+	background: #ffffff;
+	border: 1px solid #e2e4ea;
+	border-radius: 10px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+	padding: clamp(6px, 0.5vw, 12px) 0;
+	z-index: 30;
+}
+
+.record-sort-menu > div {
+	font-size: clamp(16px, 1.4vw, 26px);
+	padding: clamp(8px, 0.8vw, 14px) clamp(14px, 1.2vw, 24px);
+	cursor: pointer;
+	color: #03070f;
+	text-align: right;
+}
+
+.record-sort-menu > div:hover {
+	background: #f3f4f6;
+	color: #111827;
+}
+
+.record-toplist-body {
+	border: none;
+	border-radius: 0;
+	margin-top: clamp(8px, 0.7vw, 16px);
+	max-height: clamp(300px, 50vh, 800px);
+	overflow-y: auto;
+	scrollbar-gutter: stable both-edge;
+}
+
+.record-toplist-row {
+	display: grid;
+	grid-template-columns: 1.8fr 0.7fr 0.9fr;
+	column-gap: clamp(8px, 0.8vw, 18px);
+	align-items: center;
+	padding: clamp(10px, 0.9vw, 18px) 0;
+	border-bottom: 1px solid #f1f2f8;
+}
+
+.record-toplist-row:last-child {
+	border-bottom: none;
+}
+
+.record-toplist-date,
+.record-toplist-correct,
+.record-toplist-rate {
+	font-size: clamp(18px, 1.8vw, 30px);
+}
+
+.record-toplist-date {
+	color: #111827;
+}
+
+.record-toplist-correct {
+	text-align: right;
+}
+
+.record-toplist-rate {
+	text-align: right;
+	font-weight: 600;
+}
+
+/* =========================
+   하단: 최근 학습 기록
+   ========================= */
+.record-bottom {
+	margin-top: clamp(18px, 1.6vw, 30px);
+	padding-left: clamp(48px, 4.2vw, 100px);
+	padding-right: clamp(34px, 2.9vw, 70px);
+	border-top: 2px solid #5d5e607a;
+	padding-top: clamp(26px, 2.3vw, 48px);
+	padding-bottom: clamp(60px, 4vw, 90px);
+	overflow: visible;
+}
+
+.record-recent-table {
+	margin-top: clamp(6px, 0.6vw, 12px);
+	max-height: clamp(350px, 55vh, 700px);
+	overflow-y: auto;
+	scrollbar-gutter: stable both-edge;
+}
+
+/* 각 칸 위치/폭 조정 */
+.record-recent-row {
+	display: grid;
+	grid-template-columns: minmax(0, 3.1fr) 0.7fr 0.2fr 2fr auto;
+	column-gap: clamp(8px, 0.8vw, 18px);
+	align-items: center;
+	padding: clamp(10px, 0.9vw, 18px) 0;
+	font-size: clamp(18px, 1.8vw, 30px);
+	/* ✅ 더 진한 회색 구분선 */
+	border-bottom: 1px solid #e5e7eb;
+}
+
+/* 최근 학습 기록 제목 전용 스타일 */
+.record-recent-title-label {
+	font-size: clamp(22px, 2.1vw, 36px);
+	font-weight: 1000;
+	color: #111827;
+	margin-bottom: clamp(20px, 1.8vw, 36px);
+	margin-left: clamp(-15px, -1.25vw, -30px);
+}
+
+.record-recent-title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	font-size: clamp(18px, 1.8vw, 30px);
+	font-weight: 500;
+	color: #000000;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.record-recent-badge {
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	background: #e5e7eb;
+	border: 1px solid #cbd5e1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	font-weight: 800;
+	color: #111827;
+	flex: 0 0 auto;
+	box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+}
+
+/* 첫 회차(뱃지 숨김)에서도 정렬이 흔들리지 않도록 자리만 차지 */
+.record-recent-badge--empty {
+	visibility: hidden;
+}
+
+.record-recent-correct {
+	text-align: center;
+	font-size: clamp(18px, 1.8vw, 30px);
+	font-weight: 500;
+}
+
+.record-recent-rate {
+	text-align: right;
+	font-weight: 600;
+	font-size: clamp(18px, 1.8vw, 30px);
+}
+
+.record-recent-date {
+	font-size: clamp(18px, 1.8vw, 30px);
+	color: #111827;
+	text-align: right;
+	margin-right: clamp(100px, 8.33vw, 200px);
+	font-weight: 500;
+}
+
+.record-recent-more {
+	padding: clamp(9px, 0.8vw, 15px) clamp(26px, 2.3vw, 52px);
+	border-radius: 8px;
+	border: 1px solid #d4d7e5;
+	background: #f9fafb;
+	font-size: clamp(18px, 1.8vw, 30px);
+	font-weight: 700;
+	cursor: pointer;
+}
+
+/* more 버튼 hover */
+.record-recent-more:hover {
+	background-color: #111827;
+	color: #ffffff;
+	border-color: #111827;
+	transition: 0.2s;
+}
+
+/* =========================
+   공통 스크롤바 스타일 (퀴즈페이지와 통일)
+   ========================= */
+
+/* Webkit 기반 브라우저 */
+.record-page::-webkit-scrollbar,
+.record-toplist-body::-webkit-scrollbar,
+.record-recent-table::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+.record-page::-webkit-scrollbar-thumb,
+.record-toplist-body::-webkit-scrollbar-thumb,
+.record-recent-table::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+.record-page::-webkit-scrollbar-thumb:hover,
+.record-toplist-body::-webkit-scrollbar-thumb:hover,
+.record-recent-table::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.record-page::-webkit-scrollbar-track,
+.record-toplist-body::-webkit-scrollbar-track,
+.record-recent-table::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+}
+
+/* Firefox용 공통 설정 */
+.record-page,
+.record-toplist-body,
+.record-recent-table {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,198 @@
+/* src/pages/MemorizePage/Memorize.css */
+
+/* Memorize 페이지 전용 변수 */
+:root {
+	--memo-btn-height: clamp(40px, 3.8vw, 50px);
+	--memo-btn-width: clamp(85px, 7.5vw, 100px);
+	--memo-btn-font: clamp(15px, 1.4vw, 18px);
+}
+
+/* Memorize 버튼 스타일 */
+.memo-header-button {
+	width: var(--memo-btn-width);
+	height: var(--memo-btn-height);
+
+	background: #ffffff;
+	color: #000000;
+	border: 1.5px solid #000000;
+
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: var(--memo-btn-font);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: 0.2s ease;
+}
+
+.memo-header-button:hover {
+	background: #f4f4f4; /* 연한 회색 */
+	border-color: #000000;
+}
+
+/* 에디터 (Memorize 본문) */
+.note-editor {
+	flex: 1;
+	background: #fff;
+	border-radius: 15px;
+	box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+}
+
+.note-editor-body {
+	flex: 1;
+	padding: 20px 28px;
+	/* ✅ 우측 본문 영역은 스크롤 없이, 화면에 들어가는 만큼만 보여주고 next/previous로 넘김 */
+	overflow: hidden;
+	min-height: 0;
+}
+
+.note-editor-body::-webkit-scrollbar {
+	width: 6px;
+}
+
+.note-editor-body::-webkit-scrollbar-thumb {
+	background: #c5c5c5;
+	border-radius: 4px;
+}
+
+/* Memorize 줄 스타일 */
+.mem-lines {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(16px, 1.7vw, 24px);
+	margin-top: 16px;
+}
+
+.mem-line {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+}
+
+/* 참고용 줄 */
+.mem-line-reference {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: clamp(8px, 0.9vw, 11px) clamp(13px, 1.2vw, 18px);
+	background: #d9d9d9;
+	border-radius: 8px;
+	border: 2px solid #e0e0e0;
+	min-height: clamp(40px, 4.2vw, 52px);
+	box-sizing: border-box;
+	font-family: inherit;
+}
+
+.mem-line-reference--hidden {
+	background: #d9d9d9;
+}
+
+.mem-line-reference-text {
+	flex: 1;
+	font-size: clamp(14px, 1.3vw, 17px);
+	line-height: 1.5;
+	color: #333;
+	font-family: inherit;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+/* 틀린 부분 강조 */
+.mem-text-error {
+	color: #e74c3c;
+	font-weight: 600;
+	padding: 0px;
+	border-radius: 3px;
+}
+
+/* 마스크 (숨김 상태) */
+.mem-line-mask {
+	display: inline-block;
+	width: 100%;
+	height: 18px;
+	background: #878484;
+	border-radius: 4px;
+}
+
+/* 체크 버튼 */
+.mem-line-toggle-btn {
+	flex-shrink: 0;
+	width: clamp(24px, 2.4vw, 30px);
+	height: clamp(24px, 2.4vw, 30px);
+
+	border: none;
+	background: transparent;
+
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s;
+}
+
+.mem-line-toggle-btn:hover {
+	transform: scale(1.05);
+}
+
+/* 아이콘 크기 증가 */
+.mem-line-check-icon {
+	width: clamp(18px, 1.8vw, 22px);
+	height: clamp(18px, 1.8vw, 22px);
+	filter: brightness(0);
+	transition: filter 0.2s;
+}
+
+/* active 상태 — 아이콘만 초록색(#00B135) */
+.mem-line-toggle-btn--active .mem-line-check-icon {
+	filter: invert(40%) sepia(92%) saturate(600%) hue-rotate(90deg)
+		brightness(95%) contrast(90%);
+}
+
+/* 입력 줄 */
+.mem-line-input {
+	display: flex;
+	align-items: stretch;
+	border: 2px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fff;
+	box-sizing: border-box;
+}
+
+/* textarea 전용 스타일 */
+.mem-line-input-field {
+	flex: 1;
+	padding: clamp(10px, 1vw, 14px) clamp(14px, 1.3vw, 18px);
+	font-size: clamp(14px, 1.3vw, 17px);
+	border: none;
+	background: transparent;
+	box-sizing: border-box;
+
+	/* 최소 높이 및 공통 설정 */
+	min-height: clamp(40px, 4.2vw, 52px);
+	resize: none;
+	line-height: 1.5;
+	overflow-y: hidden;
+	white-space: pre-wrap;
+	font-family: inherit;
+	word-wrap: break-word;
+}
+
+.mem-line-input-placeholder {
+	flex-shrink: 0;
+	width: clamp(24px, 2.4vw, 30px);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+	.note-editor-body {
+		padding: 16px;
+	}
+	.mem-lines {
+		gap: 16px;
+	}
+}

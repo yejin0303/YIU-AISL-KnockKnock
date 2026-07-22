@@ -1,0 +1,80 @@
+.hyperlink-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.hyperlink-card {
+  position: relative;
+  width: 660px;
+  min-height: 276px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 28px 48px;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hyperlink-title {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.hyperlink-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hyperlink-label {
+  font-size: 25px;
+  font-weight: 400;
+  color: #000;
+  white-space: nowrap;
+}
+
+.hyperlink-input {
+  flex: 1;
+  font-size: 25px;
+  padding: 4px 8px;
+  border: none;
+  border-bottom: 1px solid #cecdcd;
+  outline: none;
+  background: transparent;
+}
+
+.hyperlink-divider {
+  width: 100%;
+  border-bottom: 1px solid #cecdcd;
+}
+
+/* 🔥 완료 버튼 가운데 정렬 */
+.hyperlink-submit-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.hyperlink-submit {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 12px;
+  background: #1427b8; /* 🔥 요청한 색 적용 */
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.hyperlink-submit:hover {
+  opacity: 0.9;
+}

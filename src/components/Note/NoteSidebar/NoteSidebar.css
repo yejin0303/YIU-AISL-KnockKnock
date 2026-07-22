@@ -1,0 +1,442 @@
+/* =========================
+   사이드바 박스
+   ========================= */
+
+.note-sidebar {
+  flex: 0 0 clamp(220px, 19vw, 280px);
+  max-width: 280px;
+  width: 100%;
+  height: 100%;
+
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+
+  padding: 22px 20px 20px 28px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* 실제 스크롤 되는 영역 */
+.sidebar-scroll {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+
+  scrollbar-width: none;
+}
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* 카테고리 리스트 */
+.sidebar-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+/* 개별 카테고리 행 */
+.sidebar-category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 26px;
+}
+
+/* 노트 리스트 */
+.sidebar-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  margin-left: 0px;
+}
+
+/* 자식 노트 리스트도 동일 */
+.sidebar-active-children .sidebar-note-list {
+  gap: 16px;
+  margin-top: 0px; /* 자식은 margin-top 없음 */
+}
+
+/* 루트 상태에서 카테고리 리스트 바로 다음에 오는 노트 리스트 */
+.sidebar-category-list + .sidebar-note-list {
+  margin-top: 16px;
+}
+
+/* 카테고리 텍스트 버튼 */
+.sidebar-category-label-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 카테고리 텍스트 */
+.sidebar-category-label {
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.2;
+  color: #000000;
+}
+
+/* 이름 편집 인풋 */
+.sidebar-category-edit-input,
+.sidebar-note-edit-input {
+  font-size: clamp(14px, 1.3vw, 16px);
+  border: 1px solid #cecdcd;
+  border-radius: 4px;
+  padding: 6px 8px;
+  line-height: 1.4;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 카테고리 아이콘 버튼 */
+.sidebar-category-icon-button {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-category-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* 선택된 카테고리 - 굵기 변화 없음 */
+.sidebar-category-item--active .sidebar-category-label {
+  font-weight: 400;
+}
+
+/* 활성 카테고리 전체 래퍼 */
+.sidebar-active-view {
+  margin-bottom: 16px;
+}
+
+/* 부모 카테고리 행 */
+.sidebar-active-category-row {
+  position: relative;
+  height: 26px;
+  margin-left: -28px;
+  padding-left: 28px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 좌측 아이콘 버튼 */
+.sidebar-active-category-icon-button {
+  position: relative;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-70%);
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-active-category-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* 부모 카테고리 이름 */
+.sidebar-active-category-label {
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  margin-left: 4px;
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: clamp(18px, 1.7vw, 22px);
+  color: #000000;
+}
+
+/* 개별 노트 행 */
+.sidebar-note-item {
+  min-height: 26px;
+  display: flex;
+  align-items: center;
+}
+
+/* 노트 텍스트 버튼 */
+.sidebar-note-label-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 노트 텍스트 기본 스타일 */
+.sidebar-note-label {
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.2;
+  color: #000000;
+}
+
+/* 현재 선택된 노트 - 굵기 변화 있음 */
+.sidebar-note-item--active .sidebar-note-label {
+  font-weight: 700;
+}
+
+/* 하위 카테고리 / 노트 목록 전체 */
+.sidebar-active-children {
+  margin-top: 16px;
+  margin-left: 10px;
+}
+
+/* 카테고리 안에 들어간 후 보이는 자식 노트들 크기 - 동일하게 */
+.sidebar-active-children .sidebar-note-label {
+  font-size: clamp(14px, 1.3vw, 16px);
+}
+
+/* 노트 추가하기 영역 */
+.sidebar-note-add {
+  margin-top: 16px;
+  margin-left: 3px;
+}
+
+.sidebar-note-add-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-note-add-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-right: 4px;
+}
+
+.sidebar-note-add-label {
+  margin-left: clamp(6px, 0.6vw, 8px);
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.2;
+  color: #878484;
+}
+
+/* 카테고리 추가 영역 */
+.sidebar-category-add {
+  margin-top: 20px;
+}
+
+.sidebar-category-add-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-category-add-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin-left: 3px;
+}
+
+.sidebar-category-add-label {
+  margin-left: clamp(6px, 0.6vw, 8px);
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.2;
+  color: #878484;
+}
+
+/* =========================
+   Quiz Highlight 카드
+   ========================= */
+
+.quiz-highlight-card {
+  margin-top: auto;
+  margin-left: 3px;
+  width: 100%;
+  max-width: 240px;
+  height: clamp(220px, 22vw, 260px);
+  background-color: #fbfbfb;
+  border-radius: 15px;
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding: clamp(14px, 1.3vw, 18px) clamp(14px, 1.3vw, 18px)
+    clamp(12px, 1.2vw, 16px) clamp(16px, 1.5vw, 20px);
+  overflow-y: auto;
+  scrollbar-width: none; /* 기본은 숨김 */
+  scrollbar-color: transparent transparent;
+}
+
+/* hover 시 스크롤바 보이기 */
+.quiz-highlight-card:hover {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+.quiz-highlight-card::-webkit-scrollbar {
+  display: none; /* 기본은 숨김 */
+}
+
+/* hover 시 스크롤바 보이기 (Chrome, Safari) */
+.quiz-highlight-card:hover::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+
+.quiz-highlight-card:hover::-webkit-scrollbar-thumb {
+  background-color: #c5c5c5;
+  border-radius: 4px;
+}
+
+.quiz-highlight-card:hover::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.quiz-highlight-title {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: clamp(17px, 1.5vw, 19px);
+  color: #212020;
+}
+
+.quiz-highlight-list {
+  list-style: none;
+  margin: clamp(12px, 1.2vw, 15px) 0 0 0;
+  padding: 0;
+}
+
+.quiz-highlight-item {
+  display: flex;
+  align-items: center;
+  height: clamp(28px, 2.6vw, 32px);
+}
+
+.quiz-highlight-item-btn {
+  width: 12px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  margin-left: 4px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-highlight-item-icon {
+  width: 9px;
+  height: 9px;
+  display: block;
+}
+
+.quiz-highlight-item-text {
+  margin-left: clamp(6px, 0.6vw, 10px);
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  font-weight: 500;
+  font-size: clamp(12px, 1.2vw, 15px);
+  line-height: clamp(22px, 2vw, 26px);
+  color: #212020;
+  /* 한 줄 말줄임표 */
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 퀴즈 하이라이트 삭제 아이콘 스타일 */
+.quiz-highlight-item-icon {
+  width: 10px;
+  height: 3px;
+  object-fit: contain;
+  display: block;
+}
+/* ===== 우클릭 컨텍스트 메뉴 ===== */
+
+.sidebar-context-menu {
+  position: fixed;
+  z-index: 9999;
+  min-width: 140px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  padding: 4px 0;
+  box-sizing: border-box;
+  font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+.sidebar-context-menu-item {
+  width: 100%;
+  padding: 7px 12px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #454545;
+  cursor: pointer;
+}
+
+.sidebar-context-menu-item:hover {
+  background-color: #f6f7f9;
+}
+
+.sidebar-context-menu-item--danger {
+  color: #f21515;
+}
+.sidebar-context-menu-item--danger:hover {
+  background-color: #ffecec;
+}
